@@ -1,0 +1,93 @@
+// LOCALHOST
+###
+// API Docs
+GET http://localhost:8080/api-docs/
+###
+GET http://localhost:8080/contacts/
+###
+GET http://localhost:8080/contacts/63ba4aa7de71fc903c458f83
+###
+GET http://localhost:8080/contacts/63ba4bbdde71fc903c458f84
+###
+GET http://localhost:8080/contacts/63ba4c01de71fc903c458f85
+###
+// Create contact
+POST http://localhost:8080/contacts/ HTTP/1.1 
+content-type: application/json
+
+{
+    "firstName":"Bob",
+    "lastName":"Smith",
+    "email":"bsmith@fakeemail.com",
+    "favoriteColor":"Blue",
+    "birthday":"03/01/1978"
+}
+
+###
+// Update Contact
+PUT http://localhost:8080/contacts/64003acf64a12501cbbc2fc1
+content-type: application/json
+
+{
+    "firstName":"Jane",
+    "lastName":"Doe",
+    "email":"jdoe@fakeemail.com",
+    "favoriteColor":"Red",
+    "birthday":"03/01/1998"
+}
+
+###
+//Delete Contact
+
+DELETE http://localhost:8080/contacts/640038222f21ced8da548fb7
+
+
+
+
+// ==================================================
+
+
+// PRODUCTION Deploy
+###
+// API Docs
+GET https://chase-cse341.onrender.com/api-docs/
+###
+GET https://chase-cse341.onrender.com/contacts/
+###
+GET https://chase-cse341.onrender.com/contacts/63ba4aa7de71fc903c458f83
+###
+GET https://chase-cse341.onrender.com/contacts/622023f642f9ab4cd6e060b3
+###
+GET https://chase-cse341.onrender.com/contacts/622023f642f9ab4cd6e060b4
+
+
+###
+// Create contact
+POST https://chase-cse341.onrender.com/contacts/ HTTP/1.1 
+content-type: application/json
+
+{
+    "firstName":"Bob",
+    "lastName":"Smith",
+    "email":"bsmith@fakeemail.com",
+    "favoriteColor":"Blue",
+    "birthday":"03/01/1978"
+}
+
+###
+// Update Contact
+PUT https://chase-cse341.onrender.com/contacts/640041c76aee23b65f2c425d
+content-type: application/json
+
+{
+    "firstName":"Jane",
+    "lastName":"Doe",
+    "email":"jdoe@fakeemail.com",
+    "favoriteColor":"Red",
+    "birthday":"03/01/1998"
+}
+
+###
+//Delete Contact
+
+DELETE https://chase-cse341.onrender.com/contacts/640041106aee23b65f2c425b
