@@ -11,10 +11,10 @@ const ObjectId = require('mongodb').ObjectId;
 
 async function getAll (req, res, next){
 
-  const userId = new ObjectId(req.params.id);
-  const dbQuery = await mongodb.getDb().db().collection('Contacts').find();
+  const movieId = new ObjectId(req.params.id);
+  const dbQuery = await mongodb.getDb().db().collection('movies').find();
 
-  console.log("--Getting all contacts--")
+  console.log("--Getting all movies--")
   res.setHeader('Content-Type', 'application/json');
   const resultArray = await dbQuery.toArray();
   res.status(200).json(resultArray);
@@ -23,13 +23,13 @@ async function getAll (req, res, next){
 
 async function getSingle (req, res, next){
 
-  const userId = new ObjectId(req.params.id);
-  const dbQuery = await mongodb.getDb().db().collection('Contacts').find({ _id: userId });
+  const movieId = new ObjectId(req.params.id);
+  const dbQuery = await mongodb.getDb().db().collection('movies').find({ _id: movieId });
 
   
   //console.log( await result.toArray() );
 
-  console.log("--Getting one contact--")
+  console.log("--Getting one movie--")
   res.setHeader('Content-Type', 'application/json');
   const resultArray = await dbQuery.toArray();
   res.status(200).json(resultArray[0]);
@@ -40,16 +40,18 @@ async function getSingle (req, res, next){
 
 }
 
-async function createContact (req, res, next){
+async function addMovie (req, res, next){
 
   console.log("--Creating Contact--")
 
-  const dbQuery = await mongodb.getDb().db().collection('Contacts').insertOne({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday
+  const dbQuery = await mongodb.getDb().db().collection('movies').insertOne({
+    title: req.body.title,
+    releaseYear: req.body.releaseYear,
+    genre: req.body.genre,
+    director: req.body.director,
+    rating: req.body.rating,
+    writer: req.body.writer,
+    cinematographer: req.body.cinematographer
   });
 
   if (dbQuery.acknowledged){
@@ -64,17 +66,19 @@ async function createContact (req, res, next){
 
 
 
-async function updateContact (req, res, next){
+async function updateMovie (req, res, next){
 
-  const userId = new ObjectId(req.params.id);
-  console.log("--Updating Contact '" + userId + "' --")
+  const movieId = new ObjectId(req.params.id);
+  console.log("--Updating Contact '" + movieId + "' --")
 
-  const dbQuery = await mongodb.getDb().db().collection('Contacts').replaceOne({ _id: userId }, {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday
+  const dbQuery = await mongodb.getDb().db().collection('movies').replaceOne({ _id: movieId }, {
+    title: req.body.title,
+    releaseYear: req.body.releaseYear,
+    genre: req.body.genre,
+    director: req.body.director,
+    rating: req.body.rating,
+    writer: req.body.writer,
+    cinematographer: req.body.cinematographer
   });
 
   if (dbQuery.acknowledged){
@@ -83,13 +87,13 @@ async function updateContact (req, res, next){
       console.log(dbQuery.modifiedCount + " item(s) modified.")
       res.status(201).json(dbQuery)
     } else{
-      console.log("Sorry, no matches found for ID: " + userId);
+      console.log("Sorry, no matches found for ID: " + movieId);
       console.log("No modifications made.")
       res.status(204).send();
     }
     
   } else{
-    console.log("ERROR! Contact update failed.")
+    console.log("ERROR! Movie update failed.")
     res.status(500).json(dbQuery)
   }
   
@@ -98,12 +102,12 @@ async function updateContact (req, res, next){
 }
 
 
-async function deleteContact (req, res, next){
+async function deleteMovie (req, res, next){
 
-  const userId = new ObjectId(req.params.id);
-  const dbQuery = await mongodb.getDb().db().collection('Contacts').deleteOne({ _id: userId }, true);
+  const movieId = new ObjectId(req.params.id);
+  const dbQuery = await mongodb.getDb().db().collection('movies').deleteOne({ _id: movieId }, true);
 
-  console.log("--Deleting contact '" + userId + "' --");
+  console.log("--Deleting contact '" + movieId + "' --");
 
   if (dbQuery.deletedCount > 0){
     console.log(dbQuery.deletedCount + " item(s) removed");
@@ -118,5 +122,5 @@ async function deleteContact (req, res, next){
 
 }
 
-module.exports = { getAll, getSingle, createContact, updateContact, deleteContact};
+module.exports = { getAll, getSingle, addMovie, updateMovie, deleteMovie};
 

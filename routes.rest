@@ -3,43 +3,47 @@
 // API Docs
 GET http://localhost:8080/api-docs/
 ###
-GET http://localhost:8080/contacts/
+GET http://localhost:8080/movies/
 ###
-GET http://localhost:8080/contacts/63ba4aa7de71fc903c458f83
+GET http://localhost:8080/movies/640d4dd9a2a3dfbbfe5b555d
 ###
-GET http://localhost:8080/contacts/63ba4bbdde71fc903c458f84
+GET http://localhost:8080/movies/640d4d346b3e407bbc14d6b9
 ###
-GET http://localhost:8080/contacts/63ba4c01de71fc903c458f85
+GET http://localhost:8080/movies/63ba4c01de71fc903c458f85
 ###
 // Create contact
-POST http://localhost:8080/contacts/ HTTP/1.1 
+POST http://localhost:8080/movies/ HTTP/1.1 
 content-type: application/json
 
 {
-    "firstName":"Bob",
-    "lastName":"Smith",
-    "email":"bsmith@fakeemail.com",
-    "favoriteColor":"Blue",
-    "birthday":"03/01/1978"
+    "title": "Back To The Future",
+    "releaseYear": "1984",
+    "genre": "Sci-fi",
+    "director": "Robert Zemeckis",
+    "rating": "G",
+    "writer": "Robert Zemeckis",
+    "cinematographer": "Dean Cundey"
 }
 
 ###
 // Update Contact
-PUT http://localhost:8080/contacts/64003acf64a12501cbbc2fc1
+PUT http://localhost:8080/movies/640d4c9b6b3e407bbc14d6b8
 content-type: application/json
 
 {
-    "firstName":"Jane",
-    "lastName":"Doe",
-    "email":"jdoe@fakeemail.com",
-    "favoriteColor":"Red",
-    "birthday":"03/01/1998"
+    "title": "Back To The Future",
+    "releaseYear": "1985",
+    "genre": "Sci-fi",
+    "director": "Robert Zemeckis",
+    "rating": "PG",
+    "writer": "Robert Zemeckis",
+    "cinematographer": "Dean Cundey"
 }
 
 ###
 //Delete Contact
 
-DELETE http://localhost:8080/contacts/640038222f21ced8da548fb7
+DELETE http://localhost:8080/movies/640d4c9b6b3e407bbc14d6b8
 
 
 
@@ -50,44 +54,48 @@ DELETE http://localhost:8080/contacts/640038222f21ced8da548fb7
 // PRODUCTION Deploy
 ###
 // API Docs
-GET https://chase-cse341.onrender.com/api-docs/
+GET https://chase-cse341-movieapi.onrender.com/api-docs/
 ###
-GET https://chase-cse341.onrender.com/contacts/
+GET https://chase-cse341-movieapi.onrender.com/movies/
 ###
-GET https://chase-cse341.onrender.com/contacts/63ba4aa7de71fc903c458f83
+GET https://chase-cse341-movieapi.onrender.com/movies/640d4dd9a2a3dfbbfe5b555d
 ###
-GET https://chase-cse341.onrender.com/contacts/622023f642f9ab4cd6e060b3
+GET https://chase-cse341-movieapi.onrender.com/movies/640d4d346b3e407bbc14d6b9
 ###
-GET https://chase-cse341.onrender.com/contacts/622023f642f9ab4cd6e060b4
+GET https://chase-cse341-movieapi.onrender.com/movies/63ba4c01de71fc903c458f85
 
 
 ###
 // Create contact
-POST https://chase-cse341.onrender.com/contacts/ HTTP/1.1 
+POST http://chase-cse341-movieAPI/movies/ HTTP/1.1 
 content-type: application/json
 
 {
-    "firstName":"Bob",
-    "lastName":"Smith",
-    "email":"bsmith@fakeemail.com",
-    "favoriteColor":"Blue",
-    "birthday":"03/01/1978"
+    "title": "Back To The Future",
+    "releaseYear": "1984",
+    "genre": "Sci-fi",
+    "director": "Robert Zemeckis",
+    "rating": "G",
+    "writer": "Robert Zemeckis",
+    "cinematographer": "Dean Cundey"
 }
 
 ###
 // Update Contact
-PUT https://chase-cse341.onrender.com/contacts/640041c76aee23b65f2c425d
+PUT http://chase-cse341-movieAPI/movies/640d4c9b6b3e407bbc14d6b8
 content-type: application/json
 
 {
-    "firstName":"Jane",
-    "lastName":"Doe",
-    "email":"jdoe@fakeemail.com",
-    "favoriteColor":"Red",
-    "birthday":"03/01/1998"
+    "title": "Back To The Future",
+    "releaseYear": "1985",
+    "genre": "Sci-fi",
+    "director": "Robert Zemeckis",
+    "rating": "PG",
+    "writer": "Robert Zemeckis",
+    "cinematographer": "Dean Cundey"
 }
 
 ###
 //Delete Contact
 
-DELETE https://chase-cse341.onrender.com/contacts/640041106aee23b65f2c425b
+DELETE https://chase-cse341-movieAPI.onrender.com/contacts/640041106aee23b65f2c425b

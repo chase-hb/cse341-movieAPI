@@ -18,7 +18,7 @@
         "responses": {}
       }
     },
-    "/contacts/": {
+    "/movies/": {
       "get": {
         "description": "",
         "produces": [
@@ -40,7 +40,7 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "title": {
                   "example": "any"
                 },
                 "lastName": {
@@ -53,6 +53,12 @@
                   "example": "any"
                 },
                 "birthday": {
+                  "example": "any"
+                },
+                "writer": {
+                  "example": "any"
+                },
+                "cinematographer": {
                   "example": "any"
                 }
               }
@@ -69,7 +75,7 @@
         }
       }
     },
-    "/contacts/{id}": {
+    "/movies/{id}": {
       "get": {
         "description": "",
         "produces": [
@@ -104,7 +110,7 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "title": {
                   "example": "any"
                 },
                 "lastName": {
@@ -117,6 +123,12 @@
                   "example": "any"
                 },
                 "birthday": {
+                  "example": "any"
+                },
+                "writer": {
+                  "example": "any"
+                },
+                "cinematographer": {
                   "example": "any"
                 }
               }
