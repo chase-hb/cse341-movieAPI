@@ -58,16 +58,16 @@ GET https://chase-cse341-movieapi.onrender.com/api-docs/
 ###
 GET https://chase-cse341-movieapi.onrender.com/movies/
 ###
-GET https://chase-cse341-movieapi.onrender.com/movies/640d4dd9a2a3dfbbfe5b555d
+GET https://chase-cse341-movieapi.onrender.com/movies/640d1d313b0d5d22ec82c1de
 ###
-GET https://chase-cse341-movieapi.onrender.com/movies/640d4d346b3e407bbc14d6b9
+GET https://chase-cse341-movieapi.onrender.com/movies/640d1ebe3b0d5d22ec82c1df
 ###
-GET https://chase-cse341-movieapi.onrender.com/movies/63ba4c01de71fc903c458f85
+GET https://chase-cse341-movieapi.onrender.com/movies/64153cb38633ad99f9da96f2
 
 
 ###
 // Create contact
-POST http://chase-cse341-movieAPI/movies/ HTTP/1.1 
+POST https://chase-cse341-movieapi.onrender.com/movies/ HTTP/1.1 
 content-type: application/json
 
 {
@@ -82,7 +82,7 @@ content-type: application/json
 
 ###
 // Update Contact
-PUT http://chase-cse341-movieAPI/movies/640d4c9b6b3e407bbc14d6b8
+PUT https://chase-cse341-movieapi.onrender.com/movies/64153cb38633ad99f9da96f2
 content-type: application/json
 
 {
@@ -98,4 +98,4 @@ content-type: application/json
 ###
 //Delete Contact
 
-DELETE https://chase-cse341-movieAPI.onrender.com/contacts/640041106aee23b65f2c425b
+DELETE https://chase-cse341-movieAPI.onrender.com/movies/64153cb38633ad99f9da96f1
